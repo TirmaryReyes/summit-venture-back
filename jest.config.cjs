@@ -8,7 +8,8 @@ module.exports = {
   collectCoverageFrom: [
     "src/**/*.ts",
     "!src/**/index.ts",
-    "!src/server/loadEnvironment.ts",
-    "!src/server/database/connectToDatabase.ts",
+    "!src/server/app.ts",
+    "!src/loadEnvironment.ts",
+    "!src/CustomError/CustomError.ts",
   ],
 };
