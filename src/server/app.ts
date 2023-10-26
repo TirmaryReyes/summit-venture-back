@@ -2,15 +2,18 @@ import cors from "cors";
 import express from "express";
 import morgan from "morgan";
 
-const app = express();
+export const app = express();
 
-const allowedOrigins = [process.env.LOCAL_ORIGIN!];
+const allowedOrigins = process.env.ALLOWED_ORIGINS;
 
-app.use(cors({ origin: allowedOrigins }));
+const options: cors.CorsOptions = {
+  origin: allowedOrigins,
+};
 
-app.use(express.json());
+app.use(cors(options));
 
 app.disable("x-powered-by");
+
 app.use(morgan("dev"));
 
-export default app;
+app.use(express.json());
