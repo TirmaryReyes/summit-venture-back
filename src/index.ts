@@ -1,11 +1,11 @@
-import chalk from "chalk";
-import app from "./server/app";
+import "./loadEnvironment.js";
 import createDebug from "debug";
+import { app } from "./server/index.js";
 
-const port = process.env.PORT ?? 4000;
+export const debug = createDebug("summit-venture-api:root");
 
-const debug = createDebug("summitVenture-api:root");
+export const port = process.env.PORT ?? 4000;
 
 app.listen(port, () => {
-  debug(chalk.blueBright(`Listening in port ${port}`));
+  debug(`listening on http://localhost:${port}`);
 });
