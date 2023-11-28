@@ -11,6 +11,6 @@ module.exports = {
     "!src/server/app.ts",
     "!src/loadEnvironment.ts",
     "!src/CustomError/CustomError.ts",
-    "!src / database / connectToDatabase.ts",
+    "!src/database/**/*",
   ],
 };
